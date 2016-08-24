@@ -1,7 +1,4 @@
 #!/bin/bash
-#doylefermi
-#chocolatkey
-# GPLv2
 
 usage()
 {
