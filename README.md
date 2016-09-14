@@ -1,2 +1,2 @@
 # killswitch
-kill it.
+## Usage: kill.sh <ip>
